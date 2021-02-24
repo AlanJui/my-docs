@@ -1,4 +1,8 @@
-# Install Lua Guideline
+---
+sidebar: auto
+---
+
+# Lua 環境建置指引
 
 Ref URL: https://www.lua.org/manual/5.4/readme.html
 
@@ -402,7 +406,7 @@ vim testLua.lua
 
 2. Run
 
-Presss key: <Space><a><t> to open a floating window for terminal.
+Presss key: [Space][a][t] to open a floating window for terminal.
 
 Entering commad below:
 

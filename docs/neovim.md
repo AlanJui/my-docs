@@ -2,7 +2,7 @@
 sidebar: auto
 ---
 
-# 《Node.JS 環境建置指引》
+# Neovim 安裝與設定指引
 
 ## 安裝
 

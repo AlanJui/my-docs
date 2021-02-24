@@ -1,4 +1,8 @@
-# Python Guideline
+---
+sidebar: auto
+---
+
+# Python 環境建置指引
 
 ## Install Python Tools
 

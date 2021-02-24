@@ -6,6 +6,7 @@ sidebar: auto
 
 前置作業：
 
+- [設定終端機作業環境](./terminal.md)
 - [建置及設定 SSH Key](./ssh.md)
 
 作業程序：
@@ -16,29 +17,18 @@ sidebar: auto
 
 ## Install Vim
 
+安裝 Vim 8.2 套件。
+
 ```
 sudo pacman -S vim
 ```
 
 ## Clone configurations from GitHub Repo
 
-1.  **下載 Vim 8 設定檔**
+**下載 Vim 8 設定檔**。
 
 ```
 git clone git@github.com:AlanJui/vim8.git ~/.vim
-```
-
-2. 下載 Terminal 用 Nerd Font
-
-```
-$ su -
-$ cd /usr/share/fonts/truetype/
-
-$ wget https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
-$ unzip Hack-v3.003-ttf.zip
-
-$ fc-cache -f -v
-$ fc-list | grep "Hack"
 ```
 
 ## Setup for Vim plugins

@@ -1,7 +1,7 @@
 module.exports = {
   title: "Manjaro KDE 開發環境建置指引",
   description: "如何在 Manjaro KDE 電腦建置開發環境",
-  base: "/",
+  base: "/my-docs/",
   themeConfig: {
     nav: [
       { text: "首頁", link: "/" },

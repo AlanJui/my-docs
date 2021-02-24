@@ -2,7 +2,7 @@
 sidebar: auto
 ---
 
-# 《Node.JS 環境建置指引》
+# Node.JS 環境建置指引
 
 ## 安裝
 
