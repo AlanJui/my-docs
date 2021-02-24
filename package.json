@@ -5,9 +5,11 @@
   "license": "MIT",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "docs:dist": "live-server docs/.vuepress/dist"
   },
   "devDependencies": {
+    "live-server": "^1.2.1",
     "vuepress": "^1.8.2"
   }
 }
