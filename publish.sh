@@ -6,7 +6,7 @@ set -e
 # build
 #npm run build
 # yarn build:comment
-yarn docs:build
+yarn build
 
 # navigate into the build output directory
 cd docs/.vuepress/dist/
