@@ -1,4 +1,4 @@
-# 技術文件模版
+# 《技術文件模版使用指引》
 
 使用 VuePress 平台，做為「技術文件模版」，以利「技術文件編輯與發行作業」更加便利。
 
@@ -235,13 +235,11 @@ GitHub Pages ，應使用 Repo 的 gh-pages branch；而 GitHub Pages 靜態網�
 
 ## 佈署作業
 
-佈署到專案使用的 GitHub Repo，由 GitHub Actions 功能，
-
+執行 git push 指令，將檔案存入 GitHub 。便能觸發「佈署作業」之執行。
 
 ```
 $ git push
 ```
-
 
 ## 參考文件
 
