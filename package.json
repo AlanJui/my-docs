@@ -4,11 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "editing": "vuepress dev docs",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "review": "live-server docs/.vuepress/dist",
-    "release": ". publish.sh"
   },
   "devDependencies": {
     "live-server": "^1.2.1",
