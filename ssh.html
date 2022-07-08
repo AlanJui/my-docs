@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>GitHub SSH Key 建置與設定指引 | Manjaro KDE 開發環境建置指引</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="如何在 Manjaro KDE 電腦建置開發環境">
+    
+    <link rel="preload" href="/my-docs/assets/css/0.styles.70138606.css" as="style"><link rel="preload" href="/my-docs/assets/js/app.68c968b3.js" as="script"><link rel="preload" href="/my-docs/assets/js/2.12f2033d.js" as="script"><link rel="preload" href="/my-docs/assets/js/20.9b9848c0.js" as="script"><link rel="prefetch" href="/my-docs/assets/js/10.a01cd2d0.js"><link rel="prefetch" href="/my-docs/assets/js/11.956c0b5d.js"><link rel="prefetch" href="/my-docs/assets/js/12.354ab613.js"><link rel="prefetch" href="/my-docs/assets/js/13.f59c7e15.js"><link rel="prefetch" href="/my-docs/assets/js/14.f11b6046.js"><link rel="prefetch" href="/my-docs/assets/js/15.a502fcad.js"><link rel="prefetch" href="/my-docs/assets/js/16.3c6cfc55.js"><link rel="prefetch" href="/my-docs/assets/js/17.be57d709.js"><link rel="prefetch" href="/my-docs/assets/js/18.34bc267d.js"><link rel="prefetch" href="/my-docs/assets/js/19.70e91483.js"><link rel="prefetch" href="/my-docs/assets/js/21.f8ee503b.js"><link rel="prefetch" href="/my-docs/assets/js/22.8eba4fa1.js"><link rel="prefetch" href="/my-docs/assets/js/23.12c4126c.js"><link rel="prefetch" href="/my-docs/assets/js/24.3140cba5.js"><link rel="prefetch" href="/my-docs/assets/js/3.7d0aa4eb.js"><link rel="prefetch" href="/my-docs/assets/js/4.43fa367b.js"><link rel="prefetch" href="/my-docs/assets/js/5.24471871.js"><link rel="prefetch" href="/my-docs/assets/js/6.e682786b.js"><link rel="prefetch" href="/my-docs/assets/js/7.3ceb344c.js"><link rel="prefetch" href="/my-docs/assets/js/8.f40c612d.js"><link rel="prefetch" href="/my-docs/assets/js/9.d9036550.js">
+    <link rel="stylesheet" href="/my-docs/assets/css/0.styles.70138606.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/my-docs/" class="home-link router-link-active"><!----> <span class="site-name">Manjaro KDE 開發環境建置指引</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/my-docs/" class="nav-link">
+  首頁
+</a></div><div class="nav-item"><a href="/my-docs/D01_OS/" class="nav-link">
+  作業系統
+</a></div><div class="nav-item"><a href="/my-docs/D02_Terminal/" class="nav-link">
+  終端機
+</a></div><div class="nav-item"><a href="/my-docs/D03_DevEnvironments/" class="nav-link">
+  開發環境
+</a></div><div class="nav-item"><a href="/my-docs/D04_DevTools/" class="nav-link">
+  開發工具
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/my-docs/" class="nav-link">
+  首頁
+</a></div><div class="nav-item"><a href="/my-docs/D01_OS/" class="nav-link">
+  作業系統
+</a></div><div class="nav-item"><a href="/my-docs/D02_Terminal/" class="nav-link">
+  終端機
+</a></div><div class="nav-item"><a href="/my-docs/D03_DevEnvironments/" class="nav-link">
+  開發環境
+</a></div><div class="nav-item"><a href="/my-docs/D04_DevTools/" class="nav-link">
+  開發工具
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>GitHub SSH Key 建置與設定指引</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/my-docs/ssh.html#macos" class="sidebar-link">macOS</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/my-docs/ssh.html#linux" class="sidebar-link">Linux</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="github-ssh-key-建置與設定指引"><a href="#github-ssh-key-建置與設定指引" class="header-anchor">#</a> GitHub SSH Key 建置與設定指引</h1> <p>作業程序：</p> <ol><li>Generating a new SSH key</li> <li>Adding SSH key to the ssh-agent</li> <li>Add the SSH key to GitHub account</li></ol> <h2 id="macos"><a href="#macos" class="header-anchor">#</a> macOS</h2> <ol><li><p>Generating a new SSH key</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ ssh-keygen -t ed25519 -C &quot;alanjui.1960@gmail.com&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>Adding SSH key to the ssh-agent</p> <p>(1) Start the ssh-agent in the background.</p> <div class="language- extra-class"><pre><code> $ eval &quot;$(ssh-agent -s)&quot;
+</code></pre></div><p>(2) If you're using macOS Sierra 10.12.2 or later, you will need to modify your <code>~/.ssh/config</code> file to automatically load keys into the ssh-agent and store passphrases in your keychain.</p> <div class="language- extra-class"><pre><code>vim ~/.ssh/config
+</code></pre></div><p>《config》:</p> <div class="language- extra-class"><pre><code>Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+</code></pre></div><p>(3) Add your SSH private key to the ssh-agent and store your passphrase in the keychain.</p> <div class="language- extra-class"><pre><code>$ ssh-add -K ~/.ssh/id_ed25519
+</code></pre></div></li> <li><p>Add the SSH key to GitHub account</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ pbcopy &lt; ~/.ssh/id_ed25519.pub
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li></ol> <h2 id="linux"><a href="#linux" class="header-anchor">#</a> Linux</h2> <ol><li><p>Generating a new SSH key</p> <div class="language- extra-class"><pre><code>$ ssh-keygen -t ed25519 -C &quot;alanjui.1960@gmail.com&quot;
+</code></pre></div></li> <li><p>Adding SSH key to the ssh-agent</p> <p>Start the ssh-agent in the background.</p> <div class="language- extra-class"><pre><code>$ eval $(ssh-agent -s)
+</code></pre></div></li> <li><p>Add the SSH key to GitHub account</p> <ul><li>ArchLinux</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ sudo pacman -S xclip
+$ xclip -selection clipboard &lt; ~/.ssh/id_ed25519.pub
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>Debian / Ubuntu</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ sudo apt install xclip
+$ xclip -selection clipboard &lt; ~/.ssh/id_ed25519.pub
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li></ol></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/my-docs/assets/js/app.68c968b3.js" defer></script><script src="/my-docs/assets/js/2.12f2033d.js" defer></script><script src="/my-docs/assets/js/20.9b9848c0.js" defer></script>
+  </body>
+</html>
