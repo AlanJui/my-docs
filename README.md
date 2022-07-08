@@ -11,13 +11,13 @@
 
 ```
 cd ~/workspace/docs
-git clone git@github.com:AlanJui/my-docs.git [ProjectName]
+git clone git@github.com:AlanJui/my-docs.git [Project_Name]
 ```
 
 ### (2) 安裝 Node.js 套件
 
 ```
-cd [ProjectName]
+cd [Project_Name]
 yarn install
 ```
 
@@ -42,13 +42,35 @@ http://localhost:8080/my-docs/
 
 ### (1) 建專案使用的 Repo 。
 
-登入 GitHub 網站，建置專案使用的 Repo 。
+1. 使用 Web 瀏覽器，登入 GitHub 網站，建置專案使用的 Repo 。
+
+2. 使用「終端機」輸入下列指令，用以設定專案與 GitHub Repo 的連結。
+
+```
+rm -rf .git
+git init
+git add .
+git commit -m "Initial project"
+git remote add origin [GitHub_Repo_URL]
+git branch -M main
+git push -u origin main
+```
+
+【備註】：
+
+GitHub Repo 網址格式： git@github.com:[User_Name]/[Project_Name]
+
+**範例**：
+
+```
+git remote add origin git@github.com:AlanJui/my-doc.git
+```
 
 ### (2) 變更 VuePress 設定檔
 
 存放 VuePress 設定檔「目錄路徑」與「檔案名稱」如下所示：
 
-**[ProjectName]/docs/.vuepress/config.js**
+**[Project_Name]/docs/.vuepress/config.js**
 
 ```
 module.exports = {
@@ -77,7 +99,7 @@ module.exports = {
 }
 ```
 
-1. 將 `base: "/my-docs/"` 改成： `base: "/[ProjectName]/"`
+1. 將 `base: "/my-docs/"` 改成： `base: "/[Project_Name]/"`
 
 2. 依專案應用的需求，變更下列兩項設定：
    - `nav: [...]` 
@@ -87,7 +109,7 @@ module.exports = {
 
 變更 GitHub Action 所使用的「佈署腳本設定檔」，令其適用於專案。
 
-[ProjectName]/.github/workflows/vuepress-deploy.yml
+[Project_Name]/.github/workflows/vuepress-deploy.yml
 
 ```
 name: Build and Deploy
@@ -110,7 +132,7 @@ jobs:
         CNAME: https://alanjui.github.io/my-dev-env/
 ```
 
-1. 變更 `TARGET_REPO` 欄的設定，改成 `[GitHub_User_Name]/[ProjectName]` 。
+1. 變更 `TARGET_REPO` 欄的設定，改成 `[User_Name]/[Project_Name]` 。
 
 2. 確認 `TARGET_BRANCH` 欄，其值應為： `gh-pages` ，不是 `main` ；或 `master` 。
 
@@ -136,7 +158,7 @@ yarn dev
 2. 使用「瀏覽器」預覽 Markdown 文檔所轉成的網頁。
 
 ```
-http://localhost:8080/[ProjectName]
+http://localhost:8080/[Project_Name]
 ```
 
 3. 啟動「編輯器」，執行進行「技術文件」的編輯工作。
@@ -162,7 +184,7 @@ yarn review
 3. 透過「瀏覽器」觀察網頁，能否正常顯示。
 
 ```
-http://localhost:8080/[ProjectName]
+http://localhost:8080/[Project_Name]
 ```
 
 ## 佈署前置作業
@@ -170,8 +192,8 @@ http://localhost:8080/[ProjectName]
 GitHub 提供的 Actions 功能，可透過「佈署腳本檔」的設定，自動將 VuePress 
 的 Markdown 檔案，轉成 GitHub Pages 。
 
-- GitHub Repo 網址： https://[GitHub_User_Name].github.io/[ProjectName]/ 
-- GitHub Pages 網址：https://[GitHub_User_Name].github.io/[ProjectName]/
+- GitHub Repo 網址： https://[User_Name].github.io/[Project_Name]/ 
+- GitHub Pages 網址：https://[User_Name].github.io/[Project_Name]/
 
 ### (1) 建置專案使用的 Secrets
 
@@ -180,7 +202,7 @@ GitHub 的「使用者設定」中，建置專案用的 Secrets (Personal Access
 
 1. 添加 Personal access tokens 設定。
 
-[GitHub_User_Name]/Settings/Developer settings/Personal access
+[User_Name]/Settings/Developer settings/Personal access
 tokens/Generate new token
 
 ![Create Token](./imgs/Token.png)
@@ -204,7 +226,7 @@ Token scopes:
 **【指令路徑】**：
 
 ```
-[Project_Repo]/Settings/Security/Secrets/Actions/New repository secret
+[Project_Name]/Settings/Security/Secrets/Actions/New repository secret
 ```
 
 【註】：完成設定儲存時，其名稱應為：ACCESS_TOKEN 。
@@ -224,7 +246,7 @@ GitHub Pages ，應使用 Repo 的 gh-pages branch；而 GitHub Pages 靜態網�
 **【指令路徑】**：
 
 ```
-[Project_Repo]/Settings/Code and automation/Pages/Source
+[Project_Name]/Settings/Code and automation/Pages/Source
 ```
 
 **【設定內容】**：
@@ -249,8 +271,8 @@ Pages 靜態網站。
 
 ### 版本管控設定作業
 
-VuePress 執行「組建（Build）作業」時，其。其產出置於「目錄」： 
-`<ProjectRoot>/docs/.vuepress/dist/` 所在處。
+VuePress 執行「組建（Build）作業」時，其。其產出所置放的「目錄路徑」為： 
+`<Project_Name>/docs/.vuepress/dist/` 。
 
 上述目錄之下的所有檔案，由於無需進行版本管控，故需進行「設定」， 要求 git 怱略。
 
