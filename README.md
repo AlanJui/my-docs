@@ -272,14 +272,14 @@ Pages 靜態網站。
 ### 版本管控設定作業
 
 VuePress 執行「組建（Build）作業」時，其。其產出所置放的「目錄路徑」為： 
-`<Project_Name>/docs/.vuepress/dist/` 。
+`[Project_Name]/docs/.vuepress/dist/` 。
 
 上述目錄之下的所有檔案，由於無需進行版本管控，故需進行「設定」， 要求 git 怱略。
 
 編輯「Git 怱略設定檔」： .gitignore ，加入「應怱略檔案」所在的目錄路徑。
 
 ```
-$ vim .gitignore
+$ nvim .gitignore
 ```
 
 在 .gitignore 檔案應加入的「設定」內容：
